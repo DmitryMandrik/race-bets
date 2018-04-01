@@ -15,13 +15,21 @@ Clone the repository, `cd` in to it, and install the required nodes:
     `cd test-automation`
     `npm install`
 
-To run all the Protractor Framework, enter `protractor conf.js`
+## How to use
+
+To run default spec, enter `protractor conf.js`
+
+```
+spec: {
+        "spec/regression_scope/sign_up/step1/*.js"
+    },
+```
 
 To run using specific browsers add it to capabilities in conf.js file:
 
 ```
 capabilities: {
-        'browserName': 'firefox'
+        'browserName': 'chrome'
     }
 ```
 
