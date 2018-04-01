@@ -38,7 +38,6 @@ exports.config = {
             displaySpecDuration: true
         }));
     }
-    // angular.getTestability(angular.element('[ng-app]')).isStable(); - does not work?
 };
 
 
