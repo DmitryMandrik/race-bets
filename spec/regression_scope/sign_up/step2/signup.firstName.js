@@ -1,0 +1,1 @@
+//here should be tests for signUp step 2 regression
