@@ -38,16 +38,25 @@ To run a test suite add it to suites in conf.js file:
 
 ```
 suites: {
-        regression: [
-            "spec/regression_scope/sign_up/step1/*.js",
-            "spec/regression_scope/sign_up/step2/*.js",
-        ]
+    smoke: [ 
+        "spec1.js",
+        "spec2.js",
+        "spec3.js"
+    ],
+
+    regression: [
+        "spec4.js",
+        "spec5.js",
+    ],
+}
 ```
 
 and run it by:
 
-`protractor conf.js --suite regression
-`
+```
+protractor conf.js --suite regression
+protractor conf.js --suite smoke,regression
+```
 
 ## Running Tests in Parallel
 
