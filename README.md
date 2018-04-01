@@ -18,20 +18,10 @@ Clone the repository, `cd` in to it, and install the required nodes:
 
 ## How to use
 
-To run default spec, enter `protractor conf.js`
+`protractor conf.js` - will run default specs from conf.js file:
 
 ```
-spec: {
-        "spec/regression_scope/sign_up/step1/*.js"
-    },
-```
-
-To run using specific browsers add it to capabilities in conf.js file:
-
-```
-capabilities: {
-        'browserName': 'chrome'
-    }
+specs: ["spec/regression_scope/sign_up/step1/*.js"],
 ```
 
 To run a test suite add it to suites in conf.js file:
@@ -56,6 +46,14 @@ and run it by:
 ```
 protractor conf.js --suite regression
 protractor conf.js --suite smoke,regression
+```
+
+To run using specific browsers add it to capabilities in conf.js file:
+
+```
+capabilities: {
+        'browserName': 'chrome'
+    }
 ```
 
 ## Running Tests in Parallel
