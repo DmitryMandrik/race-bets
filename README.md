@@ -8,12 +8,13 @@ Please see http://www.protractortest.org/#/ to find our more about Protractor.
 
 In order to run the Protractor you will need to install nodejs, Chrome.
 
-* `brew install node` (linux - `apt-get install node`)
+* OSX - `brew install node` 
+* linux - `apt-get install node`
 
 Clone the repository, `cd` in to it, and install the required nodes:
 
     `cd test-automation`
-    `npm install`
+    `npm install` - Install the dependencies in the local node_modules folder
 
 ## How to use
 
