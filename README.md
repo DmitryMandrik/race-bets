@@ -17,13 +17,21 @@ Clone the repository, `cd` in to it, and install the required nodes:
     `npm install` - install the dependencies in the local node_modules folder
 
 
-## How to use
+# How to use
+
+## Configuration
+
+The configuration file tells Protractor how to set up the Selenium Server, which tests to run, how to set up the browsers, and which test framework to use.
+
+`conf.js` - in this framework
+
+## Drivers
 
 Protractor can test directly against Chrome and Firefox without using a Selenium Server by adding `directConnect:true` option to conf.js. Here it is used:
 
 `directConnect: true` - test script communicates directly Chrome Driver or Firefox Driver, bypassing any Selenium Server
 
-# Run
+## Run
 
 `protractor conf.js` - will run default specs from conf.js file:
 
