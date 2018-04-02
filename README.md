@@ -16,7 +16,14 @@ Clone the repository, `cd` in to it, and install the required nodes:
     `cd test-automation`
     `npm install` - install the dependencies in the local node_modules folder
 
+
 ## How to use
+
+Protractor can test directly against Chrome and Firefox without using a Selenium Server. To use this, in your conf.js file set:
+
+`directConnect: true` - test script communicates directly Chrome Driver or Firefox Driver, bypassing any Selenium Server
+
+# Run
 
 `protractor conf.js` - will run default specs from conf.js file:
 
@@ -76,4 +83,19 @@ multiCapabilities: [{
         'maxInstances': 2
     }]
 ```
+## Reports
+
+`jasmine-spec-reporter` reporter displays more detailed information about running the tests, as well as having some customization options:
+
+```
+onPrepare: function(){
+    jasmine.getEnv().addReporter(new SpecReporter({
+      displayFailuresSummary: true, // Displays a summary of all failures after execution.
+      displayFailuredSpec: true, // Displays a summary of all specs that failed after execution.
+      displaySuiteNumber: true, // Displays the suite number executed hierarchically if the suites are set.
+      displaySpecDuration: true // Displays the duration of the spec run.
+    }));
+  }
+```
+
 
