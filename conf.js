@@ -4,9 +4,7 @@ exports.config = {
     capabilities: {
         'browserName': 'chrome'
     },
-    spec: {
-        "spec/regression_scope/sign_up/step1/*.js"
-    },
+    specs: ["spec/regression_scope/sign_up/step1/.js"],
     suites: {
         regression: [
             "spec/regression_scope/sign_up/step1/*.js",

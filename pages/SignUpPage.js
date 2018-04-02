@@ -10,6 +10,7 @@ class SignUpPage {
     get signupForm() { return browser.element(by.id('registrationForm')); }
     get error() { return browser.element(by.css('div.error')); }
     get activeStep() { return $('.c-progressGuide__item.g-span--5-12.isActive') }
+    get continueBtn() { return $('.g-span--12-12.g-omega.c-form__set'); }
 
     async get() {
         await browser.get(this.url);
@@ -44,6 +45,10 @@ class SignUpPage {
 
     submitSignUp() {
         this.signupForm.submit();
+    }
+
+    clickContinue() {
+        this.continueBtn.click();
     }
 
     getError() {

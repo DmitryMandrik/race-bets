@@ -1,6 +1,6 @@
 let signUpPage = require('../../../../pages/SignUpPage');
 let randomstring = require("randomstring");
-describe('SignUp Form regression_scope (1 step) - Password)', function () {
+describe('SignUp Form regression_scope - Password (1 step)', function () {
     describe('Password', function () {
         beforeEach(function () {
             browser.ignoreSynchronization = true;
@@ -49,6 +49,22 @@ describe('SignUp Form regression_scope (1 step) - Password)', function () {
             signUpPage.setConfirmPassword(tooLong);
             signUpPage.submitSignUp();
             expect(signUpPage.getError()).toEqual('Maximum of 72 characters');
+        });
+    });
+    describe('Password Confirmation', function () {
+        beforeEach(function () {
+            browser.ignoreSynchronization = true;
+            signUpPage.get();
+            signUpPage.setEmail('not_registered@gmail.com');
+            signUpPage.setUserName('Ryan99');
+            signUpPage.setPassword('1qaz!QAZ');
+            signUpPage.setConfirmCheckbox(true);
+            signUpPage.setdontSetLimitRadioBtn();
+        });
+        it('invalid when password does not match', function () {
+            signUpPage.setConfirmPassword('1qaz!QAz');
+            signUpPage.submitSignUp();
+            expect(signUpPage.getError()).toEqual('The passwords you provided do not match');
         });
     });
 });

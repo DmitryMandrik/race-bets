@@ -1,6 +1,6 @@
 let signUpPage = require('../../../../pages/SignUpPage');
 let randomstring = require("randomstring");
-describe('SignUp Form regression_scope (1 step) - Email)', function () {
+describe('SignUp Form regression_scope - Email (1 step))', function () {
     describe('Email', function () {
         beforeEach(function () {
             browser.ignoreSynchronization = true;
