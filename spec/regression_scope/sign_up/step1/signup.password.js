@@ -1,17 +1,17 @@
-let signUpPage = require('../../../../pages/SignUpPage');
+let signUpPage = new (require('../../../../pages/SignUpPage'));
 let randomstring = require("randomstring");
 describe('SignUp Form regression_scope - Password (1 step)', function () {
     describe('Password', function () {
         beforeEach(function () {
             browser.ignoreSynchronization = true;
-            signUpPage.get();
+            signUpPage.open();
             signUpPage.setEmail('not_registered@gmail.com');
             signUpPage.setUserName('Ryan99');
             signUpPage.setConfirmCheckbox(true);
             signUpPage.setdontSetLimitRadioBtn();
         });
 
-        it('valid when password is correct format', function () {
+        it('valid when password is in correct format', function () {
             signUpPage.setPassword('1qaz!QAZ');
             signUpPage.setConfirmPassword('1qaz!QAZ');
             signUpPage.submitSignUp();
@@ -19,14 +19,14 @@ describe('SignUp Form regression_scope - Password (1 step)', function () {
             browser.wait(EC.textToBePresentInElement(signUpPage.activeStep, 'Personal details'), 10000);
         });
 
-        it('invalid when password empty', function () {
+        it('invalid when password is empty', function () {
             signUpPage.setPassword('');
             signUpPage.setConfirmPassword('');
             signUpPage.submitSignUp();
             expect(signUpPage.getError()).toEqual('This field is required');
         });
 
-        it('invalid when password is in wrong format', function () {
+        it('invalid when password is in the wrong format', function () {
             signUpPage.setPassword('wrongFormat');
             signUpPage.setConfirmPassword('wrongFormat');
             signUpPage.submitSignUp();
@@ -54,14 +54,14 @@ describe('SignUp Form regression_scope - Password (1 step)', function () {
     describe('Password Confirmation', function () {
         beforeEach(function () {
             browser.ignoreSynchronization = true;
-            signUpPage.get();
+            signUpPage.open();
             signUpPage.setEmail('not_registered@gmail.com');
             signUpPage.setUserName('Ryan99');
             signUpPage.setPassword('1qaz!QAZ');
             signUpPage.setConfirmCheckbox(true);
             signUpPage.setdontSetLimitRadioBtn();
         });
-        it('invalid when password does not match', function () {
+        it('invalid when passwords do not match', function () {
             signUpPage.setConfirmPassword('1qaz!QAz');
             signUpPage.submitSignUp();
             expect(signUpPage.getError()).toEqual('The passwords you provided do not match');

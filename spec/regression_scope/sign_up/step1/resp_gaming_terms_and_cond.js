@@ -25,7 +25,7 @@ describe('SignUp Form regression_scope (1 step) - responsible gaming and terms&c
         });
     });
     describe('terms&conditions', function () {
-        it('test terms&conditions link opens Terms & Conditions/Privacy Policy', function () {
+        it('test terms&conditions link opens Terms&Conditions/Privacy Policy', function () {
             //TODO
         });
         it('test terms&conditions checkbox is required', function () {
