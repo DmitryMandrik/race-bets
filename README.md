@@ -19,7 +19,7 @@ Clone the repository, `cd` in to it, and install the required nodes:
 
 ## How to use
 
-Protractor can test directly against Chrome and Firefox without using a Selenium Server. To use this, in your conf.js file set:
+Protractor can test directly against Chrome and Firefox without using a Selenium Server by adding `directConnect:true` option to conf.js. Here it is used:
 
 `directConnect: true` - test script communicates directly Chrome Driver or Firefox Driver, bypassing any Selenium Server
 
