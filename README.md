@@ -1,4 +1,4 @@
-# Race Bets Protractor Framework
+# RaceBets Protractor Framework
 
 ## What is Protractor
 
