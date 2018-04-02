@@ -4,7 +4,7 @@ exports.config = {
     capabilities: {
         'browserName': 'chrome'
     },
-    specs: ["spec/regression_scope/sign_up/step1/.js"],
+    specs: ["spec/regression_scope/sign_up/step1/*.js"],
     suites: {
         regression: [
             "spec/regression_scope/sign_up/step1/*.js",
@@ -36,7 +36,6 @@ exports.config = {
             displaySpecDuration: true
         }));
     }
-    // angular.getTestability(angular.element('[ng-app]')).isStable(); - does not work?
 };
 
 
