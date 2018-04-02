@@ -15,7 +15,8 @@ Clone the repository, `cd` in to it, and install the required nodes:
 
     `cd race-bets-automation`
     `npm install` - install the dependencies in the local node_modules folder
-
+    `npm install -g protractor`
+    `webdriver-manager update` - The webdriver-manager is a helper tool to easily get an instance of a Selenium Server running
 
 # How to use
 
